@@ -1,0 +1,281 @@
+@-webkit-keyframes spinning
+{
+  0%
+  {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+
+  50%
+  {
+    transform: rotate(325deg);
+    -webkit-transform: rotate(325deg);
+  }
+
+  100%
+  {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+}
+
+@-webkit-keyframes translating
+{
+  0%
+  {
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+  }
+
+  50%
+  {
+    transform: translateX(50%);
+    -webkit-transform: translateX(50%);
+  }
+
+  100%
+  {
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+  }
+}
+
+@-webkit-keyframes color-change
+{
+	0%, 20%, 40%, 60%, 100%
+  {
+	    background-color: #fff;
+	}
+
+	10%, 30%, 50%, 70%, 90%
+  {
+	    background-color: #E20D02;
+
+	}
+}
+
+.loader #moving-container
+{
+	width: 10em;
+	height: 10em;
+	margin: 10px auto;
+	position: relative;
+	-webkit-animation: translating 5s infinite;
+}
+
+.loader #pokeball-container
+{
+	width: 10em;
+	height: 10em;
+  -webkit-animation: spinning 5s infinite;
+  margin: 0;
+  padding: 0;
+}
+
+.loader #pokeball
+{
+	width: 10em;
+	height: 10em;
+  background: -moz-linear-gradient(-45deg, #ffffff 0%, #f3f3f3 40%, #ededed 41%, #ffffff 100%);
+  background: -webkit-linear-gradient(-45deg, #ffffff 0%,#f3f3f3 40%,#ededed 41%,#ffffff 100%);
+  background: linear-gradient(135deg, #ffffff 0%,#f3f3f3 40%,#ededed 41%,#ffffff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=1 );
+	background-color: #fff;
+	border-radius: 50%;
+	position: relative;
+	overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.loader #pokeball::before
+{
+	content: '';
+	background-color: red;
+  background: -moz-linear-gradient(-45deg, #ffb9b5 0%, #ff2a1f 50%, #e20b00 51%, #ff8781 100%);
+  background: -webkit-linear-gradient(-45deg, #ffb9b5 0%,#ff2a1f 50%,#e20b00 51%,#ff8781 100%);
+  background: linear-gradient(135deg, #ffb9b5 0%,#ff2a1f 50%,#e20b00 51%,#ff8781 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffb9b5', endColorstr='#ff8781',GradientType=1 );
+	border-radius: 5em 5em 0 0;
+	width: 10em;
+	height: 5em;
+	position: absolute;
+}
+
+.loader #pokeball .pokeball-details
+{
+	width: 10em;
+	height: 1em;
+	background-color: #333;
+  background: -moz-linear-gradient(-45deg, #959595 0%, #0d0d0d 40%, #010101 50%, #0a0a0a 60%, #959595 100%);
+  background: -webkit-linear-gradient(-45deg, #959595 0%,#0d0d0d 40%,#010101 50%,#0a0a0a 60%,#959595 100%);
+  background: linear-gradient(135deg, #959595 0%,#0d0d0d 40%,#010101 50%,#0a0a0a 60%,#959595 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', endColorstr='#959595',GradientType=1 );
+	position: absolute;
+	top: 4.5em;
+}
+
+.loader #pokeball .pokeball-details::before
+{
+	content: '';
+	width: 3.5em;
+	height: 3.5em;
+	border-radius: 50%;
+	background-color: #202020;
+	position: absolute;
+	top: -1.25em;
+	left: 3.25em;
+	z-index: 200;
+}
+
+.loader #pokeball .pokeball-details::after
+{
+	content: '';
+	width: 1.8em;
+	height: 1.8em;
+	border: 0.3em solid white;
+	border-radius: 50%;
+  box-sizing: initial;
+	background-color: #fff;
+	position: absolute;
+	top: -0.65em;
+	left: 3.80em;
+	margin: 0 auto;
+	z-index: 250;
+	-webkit-animation: color-change 3s infinite;
+}
+
+.ellipsis-animation span {
+  opacity: 0;
+  -webkit-animation: ellipsis-dot 1.15s infinite;
+  animation: ellipsis-dot 1.15s infinite;
+}
+
+.ellipsis-animation span:nth-child(1) {
+  -webkit-animation-delay: 0.0s;
+  animation-delay: 0.0s;
+}
+.ellipsis-animation span:nth-child(2) {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+.ellipsis-animation span:nth-child(3) {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
+.loader-label
+{
+  margin-left: 40%;
+  margin-top: 30px;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  font-size: 1.5em;
+  letter-spacing: 0.1em;
+  line-height: 1.5em;
+  color: #C8C8C8;
+  white-space: nowrap;
+  -webkit-animation: loader-label 1.15s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+  -moz-animation: loader-label 1.15s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+  animation: loader-label 1.15s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.loader
+{
+  position: relative;
+  margin: 0 auto;
+  overflow: visible;
+  padding-top: 10em;
+  height: 0;
+  width: 10em;
+}
+
+@-webkit-keyframes ellipsis-dot
+{
+  0%
+  {
+    opacity: 0;
+  }
+
+  30%
+  {
+    opacity: 1;
+  }
+
+  100%
+  {
+    opacity: 0;
+  }
+}
+
+@keyframes ellipsis-dot
+{
+  0%
+  {
+    opacity: 0;
+  }
+  30%
+  {
+    opacity: 1;
+  }
+
+  100%
+  {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes loader-label
+{
+  0%
+  {
+    opacity: 0.25;
+  }
+
+  30%
+  {
+    opacity: 1;
+  }
+
+  100%
+  {
+    opacity: 0.25;
+  }
+}
+@-moz-keyframes loader-label
+{
+  0%
+  {
+    opacity: 0.25;
+  }
+
+  30%
+  {
+    opacity: 1;
+  }
+
+  100%
+  {
+    opacity: 0.25;
+  }
+}
+@keyframes loader-label
+{
+  0%
+  {
+    opacity: 0.25;
+  }
+
+  30%
+  {
+    opacity: 1;
+  }
+
+  100%
+  {
+    opacity: 0.25;
+  }
+}
