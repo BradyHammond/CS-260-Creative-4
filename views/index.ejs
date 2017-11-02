@@ -387,6 +387,7 @@
             $(this).addClass("active");
             $("#screen-left-main").scrollTo(this);
             pokedex();
+            return false;
           }
         });
         $("#search").val("");
@@ -400,7 +401,7 @@
           $("#screen-right-loading-content").removeClass("hidden");
           $("#screen-right-loading-error").addClass("hidden");
         }
-        
+
         $("#screen-right-content").addClass("hidden");
         $("#screen-right-loading").removeClass("hidden");
         var url = "../pokedex?search=";
